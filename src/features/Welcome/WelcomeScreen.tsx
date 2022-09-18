@@ -25,7 +25,6 @@ export const WelcomeScreen = ({ navigation }) => {
                         type='font-awesome'
                         color='black'
                         style={styles.sliderElementIcon}
-                        onPress={() => console.log('hello')}
                         tvParallaxProperties={undefined} />
                 </View>
             }
