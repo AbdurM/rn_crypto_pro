@@ -27,7 +27,8 @@ export const styles = StyleSheet.create({
     },
     sliderContainer: {
         margin: 8,
-        marginVertical: 80,
+        marginTop: 80,
+        marginBottom: 70,
         backgroundColor: COLORS.primaryGrey,
         borderRadius: 45,
         overflow: 'hidden',

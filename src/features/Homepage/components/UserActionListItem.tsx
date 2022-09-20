@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import { styles } from "../styles";
-import { Icon } from 'react-native-elements';
 import React from "react";
+import { Icon } from "react-native-elements";
 
 export const UserActionListItem = ({ item }) => {
     return (
@@ -9,11 +9,12 @@ export const UserActionListItem = ({ item }) => {
             <View style={styles.userActionListItemInnerContainer}>
                 <Icon
                     name={item.iconType}
+                    type='font-awesome'
                     color='black'
-                    size={16}
-                    style={{ marginTop: 30 }}
+                    size={25}
                     tvParallaxProperties={undefined} />
             </View>
             <Text style={styles.userActionListItemText}>{item.name}</Text>
-        </View>);
+        </View>
+    );
 }

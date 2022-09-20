@@ -1,8 +1,6 @@
 import { View, Text, FlatList } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from "./styles";
-import { Icon } from 'react-native-elements';
-import { TotalProgress } from "./components/TotalProgress";
 import { UserActionListItem } from "./components/UserActionListItem";
 import { UseHomeScreen } from './useHomeScreen';
 import { COLORS } from "../../global/colors";
@@ -12,7 +10,7 @@ export const HomeScreen = () => {
     const { userActions, cryptoCurrencies } = UseHomeScreen();
     return (
         <LinearGradient
-            colors={['rgba(0,0,0,0.8)', 'transparent']}
+            colors={['rgba(0,0,0,0.8)', COLORS.customGreen]}
             style={styles.linearGradient}>
             <View>
                 <View style={styles.innerContainer}>
@@ -21,7 +19,7 @@ export const HomeScreen = () => {
                             <Text style={styles.dpText}>AM</Text>
                         </View>
                     </View>
-                    <Text style={styles.amountText}>$12,345.03</Text>
+                    <Text style={styles.amountText}>$16,345.03</Text>
                     <View style={styles.totalProgress}>
                         <Text>+5.25% </Text>
                         <Text>|</Text>
@@ -33,6 +31,8 @@ export const HomeScreen = () => {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         data={userActions}
+                        pagingEnabled={true}
+                        legacyImplementation={false}
                         renderItem={UserActionListItem} />
                 </View>
 
@@ -40,14 +40,14 @@ export const HomeScreen = () => {
                     <Text style={styles.wishListText}>My wishlist</Text>
                     <Text style={styles.seeAllText}>See all</Text>
                 </View>
-
-                <FlatList
-                    showsVerticalScrollIndicator={false}
-                    data={cryptoCurrencies}
-                    renderItem={WishListItem}
-                />
-
-
+                <View style={styles.wishListContainer}>
+                    <FlatList
+                        showsVerticalScrollIndicator={false}
+                        data={cryptoCurrencies}
+                        renderItem={WishListItem}
+                        pagingEnabled={true}
+                    />
+                </View>
             </View>
         </LinearGradient >
     );

@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     userActionListItemContainer: {
         marginLeft: 20,
         marginTop: 30,
-        height: 80,
+        height: 100,
         width: 70,
     },
     userActionListItemInnerContainer: {
@@ -57,6 +57,7 @@ export const styles = StyleSheet.create({
         width: 70,
         borderRadius: 25,
         backgroundColor: 'white',
+        justifyContent: 'center'
     },
     userActionsList: {
         marginTop: 30,
@@ -87,6 +88,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'flex-end'
     },
+    wishListContainer: { height: '50%' },
     wishItemContainer: {
         backgroundColor: COLORS.primaryGrey,
         height: 95,
@@ -120,7 +122,6 @@ export const styles = StyleSheet.create({
         fontSize: 18
     },
     wishItemPricePercentile: {
-        color: 'red',
         fontWeight: '600',
         fontSize: 13,
         marginTop: 8,
