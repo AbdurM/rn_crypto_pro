@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../global/colors';
+import * as LocalAuthentication from 'expo-local-authentication';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,

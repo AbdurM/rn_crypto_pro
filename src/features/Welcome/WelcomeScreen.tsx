@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import Slider from 'react-native-slide-to-unlock';
 import { Icon } from 'react-native-elements';
 import { styles } from './styles';
+import * as LocalAuthentication from 'expo-local-authentication';
 
 export const WelcomeScreen = ({ navigation }) => {
 
@@ -13,9 +14,11 @@ export const WelcomeScreen = ({ navigation }) => {
         <Text style={styles.subtitle}>Start investing today and your future will change for better</Text>
         <StatusBar style="auto" />
         <Slider
-            onEndReached={() => {
-                console.log('end reached');
-                navigation.navigate('HomeScreen');
+            onEndReached={async () => {
+                const authenticationResult = await LocalAuthentication.authenticateAsync();
+                if (authenticationResult.success) {
+                    navigation.navigate('HomeScreen');
+                }
             }}
             containerStyle={styles.sliderContainer}
             sliderElement={

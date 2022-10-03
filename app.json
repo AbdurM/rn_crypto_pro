@@ -18,7 +18,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "NSFaceIDUsageDescription": "This app will optionally use Face ID or Touch ID to save login",
+      "bundleIdentifier": "com.abdur.developer"
     },
     "android": {
       "adaptiveIcon": {
